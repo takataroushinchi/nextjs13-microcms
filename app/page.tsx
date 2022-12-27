@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className={styles.main}>
+      <h1  className="flex flex-wrap items-center justify-between bg-gray-600 p-8 border-8">xxxxx</h1>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;

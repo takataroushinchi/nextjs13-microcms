@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   swcMinify: false,
-  reactStrictMode: true
-}
+  reactStrictMode: true,
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

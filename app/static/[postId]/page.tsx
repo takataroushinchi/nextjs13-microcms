@@ -4,36 +4,36 @@ import { getDetail, getList } from "libs/microcms";
 // import { getDetail, getList } from "../../../libs/microcms";
 
 export async function generateStaticParams() {
- const { contents } = await getList();
+  const { contents } = await getList();
 
- const paths = contents.map((post) => {
-  return {
-   postId: post.id,
-  };
- });
+  const paths = contents.map((post) => {
+    return {
+      postId: post.id,
+    };
+  });
 
- return [...paths];
+  return [...paths];
 }
 
 export default async function StaticDetailPage({
- params: { postId },
+  params: { postId },
 }: {
- params: { postId: string };
+  params: { postId: string };
 }) {
- const post = await getDetail(postId);
+  const post = await getDetail(postId);
 
- // ページの生成された時間を取得
- const time = new Date().toLocaleString();
+  // ページの生成された時間を取得
+  const time = new Date().toLocaleString();
 
- if (!post) {
-  notFound();
- }
+  if (!post) {
+    notFound();
+  }
 
- return (
-  <div>
-   <h1>{post.title}</h1>
-   <h2>{time}</h2>
-   <div>{parse(post.content)}</div>
-  </div>
- );
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <h2>{time}</h2>
+      <div>{parse(post.content)}</div>
+    </div>
+  );
 }

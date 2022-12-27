@@ -1,26 +1,21 @@
+import { getList } from "libs/microcms";
 import { Suspense } from "react";
-import { getList } from "../../libs/microcms";
 import { Blog } from "./blog";
 import { BlogPromiseProps } from "./blog-props";
 import { BlogUse } from "./blog-use";
 
-
 // キャッシュを利用しない
 export const revalidate = 0;
-
 
 export default async function StaticPage() {
   const data = getList();
 
-
   // ページの生成された時間を取得
   const time = new Date().toLocaleString();
-
 
   if (!data) {
     return <h1>No contents</h1>;
   }
-
 
   return (
     <div>

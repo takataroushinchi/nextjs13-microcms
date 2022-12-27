@@ -1,21 +1,21 @@
-import { BlogResponse } from "../../libs/microcms";
+import { BlogResponse } from "libs/microcms";
 
 export async function BlogPromiseProps({
- promise,
+  promise,
 }: {
- promise: Promise<BlogResponse>;
+  promise: Promise<BlogResponse>;
 }) {
- const { contents } = await promise;
+  const { contents } = await promise;
 
- return (
-  <ul>
-   {contents.map((item) => {
-    return (
-     <li key={item.id}>
-      <h1>{item.title}</h1>
-     </li>
-    );
-   })}
-  </ul>
- );
+  return (
+    <ul>
+      {contents.map((item) => {
+        return (
+          <li key={item.id}>
+            <h1>{item.title}</h1>
+          </li>
+        );
+      })}
+    </ul>
+  );
 }

@@ -6,11 +6,23 @@ import type {
 } from "microcms-js-sdk";
 
 //ブログの型定義
+type Category = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  name: string;
+};
+
 export type Blog = {
   id: string;
   title: string;
   content: string;
-  eyecatch?: MicroCMSImage;
+  eyecatch: MicroCMSImage;
+  done: boolean;
+  category: Category[];
+  createAt: string;
 } & MicroCMSDate;
 
 export type BlogResponse = {

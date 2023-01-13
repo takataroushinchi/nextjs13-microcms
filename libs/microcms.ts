@@ -32,6 +32,42 @@ export type BlogResponse = {
   contents: Blog[];
 };
 
+type Body = {
+  fieldId: "richlink" | "markdown" | "richeditor";
+  // richeditor
+  richText: string;
+  // richlink
+  title: string;
+  url: string;
+  image: MicroCMSImage;
+  // markdown
+  markdownText: string;
+} & MicroCMSDate;
+
+type Topic = {
+  fieldId: "tech" | "note";
+  title: string;
+  body: Body[];
+};
+
+export type Post = {
+  id: string;
+  title: string;
+  caption: string;
+  body: string;
+  target: string[];
+  done: boolean;
+  topic: Topic[];
+  createAt: string;
+};
+
+export type Posts = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: Post[];
+};
+
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error("MICROCMS_SERVICE_DOMAIN is required");
 }
@@ -72,6 +108,50 @@ export const getDetail = async (
 
   // データの取得が目視しやすいよう明示的に遅延効果を追加
   await new Promise((resolve) => setTimeout(resolve, 3000));
+
+  return detailData;
+};
+
+// ブログ一覧を取得
+export const getBlogList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Blog>({
+    endpoint: "blogs",
+    queries,
+  });
+
+  return listData;
+};
+
+// ブログの詳細を取得
+export const getBlogDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
+  const detailData = await client.get<Blog>({
+    endpoint: "blogs",
+    contentId,
+    queries,
+  });
+
+  return detailData;
+};
+
+// ポスト一覧を取得
+export const getPostList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Post>({
+    endpoint: "post",
+    queries,
+  });
+
+  return listData;
+};
+
+// ポストの詳細を取得
+export const getPostDetail = async (contentId: string) => {
+  const detailData = await client.getListDetail<Post>({
+    endpoint: "post",
+    contentId,
+  });
 
   return detailData;
 };

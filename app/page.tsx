@@ -1,14 +1,14 @@
 import { Inter } from "@next/font/google";
 import MicroCMSImage from "components/ui/MicroCMSImage";
 import dayjs from "dayjs";
-import { getList } from "libs/microcms";
+import { getBlogList } from "libs/microcms";
 
 import styles from "./page.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
-  const { contents } = await getList();
+  const { contents } = await getBlogList({ offset: 0, limit: 100 });
 
   if (!contents || contents.length === 0) {
     return <h1>No contents</h1>;

@@ -5,6 +5,9 @@ const nextConfig = {
   },
   swcMinify: false,
   reactStrictMode: true,
+  images: {
+    domains: ["images.microcms-assets.io", "picsum.photos"],
+  },
 };
 
 module.exports = nextConfig;

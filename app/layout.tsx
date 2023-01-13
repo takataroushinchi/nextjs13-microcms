@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import { Tab } from "components/ui/Tab";
+import { Tab } from "app/components/Tab";
 
 export default function RootLayout({
   children,

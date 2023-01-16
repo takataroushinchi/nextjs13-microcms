@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
 import parse from "html-react-parser";
 import { getDetail, getList } from "libs/microcms";
+import { notFound } from "next/navigation";
 
 // キャッシュを利用しない
 export const revalidate = 0;

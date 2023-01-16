@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { getList } from "libs/microcms";
+import Link from "next/link";
 
 // キャッシュを利用しない
 export const revalidate = 0;

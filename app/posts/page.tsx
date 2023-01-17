@@ -3,7 +3,11 @@ import { PostListSearch } from "app/components/post-list-search";
 import { getPostList } from "libs/microcms";
 
 export default async function PostsPage() {
-  const { contents } = await getPostList();
+  const { totalCount, offset, limit, contents } = await getPostList({
+    fields: "id,title,caption,target,done",
+    offset: 0,
+    limit: 100,
+  });
 
   if (!contents || contents.length === 0) {
     return <h1>No contents</h1>;
@@ -11,7 +15,7 @@ export default async function PostsPage() {
 
   return (
     <div>
-      <PostListSearch contents={contents} />
+      <PostListSearch totalCount={totalCount} contents={contents} />
       {/* @ts-ignore*/}
       <PostList />
     </div>

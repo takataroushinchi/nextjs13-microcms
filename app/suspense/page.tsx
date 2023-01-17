@@ -1,5 +1,6 @@
 import { getList } from "libs/microcms";
 import { Suspense } from "react";
+
 import { Blog } from "./blog";
 import { BlogPromiseProps } from "./blog-props";
 import { BlogUse } from "./blog-use";

@@ -1,4 +1,3 @@
-import { PostList } from "app/components/post-list";
 import { PostListSearch } from "app/components/post-list-search";
 import { getPostList } from "libs/microcms";
 
@@ -16,8 +15,6 @@ export default async function PostsPage() {
   return (
     <div>
       <PostListSearch totalCount={totalCount} contents={contents} />
-      {/* @ts-ignore*/}
-      <PostList />
     </div>
   );
 }

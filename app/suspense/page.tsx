@@ -1,3 +1,4 @@
+import Spinner from "app/components/spinner";
 import { getList } from "libs/microcms";
 import { Suspense } from "react";
 
@@ -22,7 +23,7 @@ export default async function StaticPage() {
     <div>
       <h1>{time}</h1>
       <h2>非同期コンポーネント</h2>
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={<Spinner />}>
         {/* @ts-expect-error Server Component */}
         <Blog />
       </Suspense>

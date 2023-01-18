@@ -70,15 +70,21 @@ export const PostListSearch = (props: Props) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className="flex gap-x-2">
-          <IconSearch size="20" />
+        <div className="flex items-center justify-start gap-x-2">
+          <div>
+            <IconSearch size="20" />
+          </div>
           <input
             type="search"
             name="query"
-            className="pr-2"
+            className="border p-2"
             placeholder="キーワードを入力"
           />
-          <select value={targetValue} onChange={handleSelectChange}>
+          <select
+            className="border"
+            value={targetValue}
+            onChange={handleSelectChange}
+          >
             {targets.map((target) => (
               <option key={target} value={target}>
                 {target}
@@ -87,19 +93,19 @@ export const PostListSearch = (props: Props) => {
           </select>
           <button
             type="submit"
-            className="border border-sky-600 bg-sky-600 px-2 hover:enabled:bg-sky-400 disabled:opacity-75"
+            className="rounded border border-sky-600 bg-sky-600 py-2 px-4 font-bold text-white hover:enabled:bg-blue-500 disabled:opacity-75"
           >
             検索
           </button>
           <button
             type="reset"
-            className="border border-gray-600 bg-gray-600 px-2 hover:enabled:bg-gray-400 disabled:opacity-75"
+            className="inline-flex items-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400 disabled:opacity-75"
             onClick={handleReset}
           >
             リセット
           </button>
           <button
-            className="relative -top-2 left-1"
+            className="rounded border border-blue-500 bg-transparent py-2 px-4 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white disabled:opacity-75"
             onClick={() => handleSwitch()}
           >
             完了除外 {excludeDone ? "ON" : "OFF"}

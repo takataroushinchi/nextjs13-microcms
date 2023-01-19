@@ -1,4 +1,4 @@
-import { PostList } from "app/components/post-list";
+import { CategoryList } from "app/components/category-list";
 import RefreshBtn from "app/components/refresh-btn";
 import Spinner from "app/components/spinner";
 import { Suspense } from "react";
@@ -15,7 +15,7 @@ export default function BlogLayout({
           <RefreshBtn />
           <Suspense fallback={<Spinner />}>
             {/* @ts-ignore*/}
-            <PostList />
+            <CategoryList />
           </Suspense>
         </div>
       </aside>

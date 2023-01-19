@@ -1,7 +1,7 @@
-import { PostList } from "app/components/post-list";
+import { PostListSearch } from "app/components/post-list-search";
 import { getPostList } from "libs/microcms";
 
-export default async function PostsPage() {
+export default async function SearchPage() {
   const { totalCount, offset, limit, contents } = await getPostList({
     fields: "id,title,caption,target,done",
     offset: 0,
@@ -14,8 +14,7 @@ export default async function PostsPage() {
 
   return (
     <div>
-      {/* @ts-expect-error Server Component */}
-      <PostList />
+      <PostListSearch totalCount={totalCount} contents={contents} />
     </div>
   );
 }

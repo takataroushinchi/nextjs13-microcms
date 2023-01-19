@@ -2,6 +2,7 @@ const PATH = {
   INDEX: "/",
   POSTS: "/posts",
   POST: "/posts/[postid]",
+  SEARCH: "/search",
   STATICS: "/static",
   STATIC: "/static/[postid]",
   DYNAMICS: "/dynamic",

@@ -6,11 +6,11 @@ import { getPath } from "libs/const/path";
 import type { Post, Posts } from "libs/microcms";
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import Link from "next/link";
-import { ComponentProps, useState } from "react";
+import { ComponentProps, FC, useState } from "react";
 
 type Props = Pick<Posts, "totalCount" | "contents">;
 
-export const PostListSearch = (props: Props) => {
+export const PostListSearch: FC<Props> = (props) => {
   const [search, setSearch] = useState<MicroCMSListResponse<Post>>();
   const [excludeDone, setExcludeDone] = useState(false);
   const [targetValue, setTargetValue] = useState("-");

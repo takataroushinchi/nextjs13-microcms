@@ -6,13 +6,20 @@ import type {
 import { createClient } from "microcms-js-sdk";
 
 //ブログの型定義
-type Category = {
+export type Category = {
   id: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
   name: string;
+};
+
+export type Categories = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: Category[];
 };
 
 export type Blog = {
@@ -110,6 +117,16 @@ export const getDetail = async (
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   return detailData;
+};
+
+// カテゴリ一覧を取得
+export const getCategoryList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.get<Categories>({
+    endpoint: "categories",
+    queries,
+  });
+
+  return listData;
 };
 
 // ブログ一覧を取得

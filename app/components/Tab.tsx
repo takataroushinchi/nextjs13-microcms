@@ -6,7 +6,8 @@ import { ActiveLink } from "libs/next";
 
 const ITEMS = [
   { href: getPath("INDEX"), label: "トップ", Icon: IconHome },
-  { href: getPath("POSTS"), label: "案件リスト", Icon: IconList },
+  { href: getPath("POSTS"), label: "案件", Icon: IconList },
+  { href: getPath("SEARCH"), label: "検索", Icon: IconList },
   { href: getPath("STATICS"), label: "static", Icon: IconList },
   { href: getPath("DYNAMICS"), label: "dynamic", Icon: IconList },
   { href: getPath("SUSPENSE"), label: "suspense", Icon: IconList },

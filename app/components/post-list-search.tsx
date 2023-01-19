@@ -8,7 +8,7 @@ import { MicroCMSListResponse } from "microcms-js-sdk";
 import Link from "next/link";
 import { ComponentProps, useState } from "react";
 
-type Props = Omit<Posts, "offset" | "limit">;
+type Props = Pick<Posts, "totalCount" | "contents">;
 
 export const PostListSearch = (props: Props) => {
   const [search, setSearch] = useState<MicroCMSListResponse<Post>>();

@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import "../styles/tailwind.css";
 
 import { Tab } from "app/components/Tab";
 

@@ -68,7 +68,7 @@ export const PostListSearch = (props: Props) => {
   const totalCount = search ? search.totalCount : props.totalCount;
 
   return (
-    <div>
+    <div className="pl-4">
       <form onSubmit={handleSubmit}>
         <div className="flex items-center justify-start gap-x-2">
           <div>

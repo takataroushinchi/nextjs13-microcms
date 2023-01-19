@@ -1,21 +1,21 @@
-import { Inter } from '@next/font/google'
-import MicroCMSImage from 'app/components/MicroCMSImage'
-import dayjs from 'dayjs'
-import { getBlogList } from 'libs/microcms'
+import { Inter } from "@next/font/google";
+import MicroCMSImage from "app/components/MicroCMSImage";
+import dayjs from "dayjs";
+import { getBlogList } from "libs/microcms";
 
-import styles from './page.module.css'
+import styles from "./page.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
-  const { contents } = await getBlogList({ offset: 0, limit: 100 })
+  const { contents } = await getBlogList({ offset: 0, limit: 100 });
 
   if (!contents || contents.length === 0) {
-    return <h1>No contents</h1>
+    return <h1>No contents</h1>;
   }
 
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main} bg-gray-200 pl-2`}>
       <h1 className={inter.className}>
         Design Docs <span>-&gt;</span>
       </h1>
@@ -33,7 +33,7 @@ export default async function Home() {
                     className="flex-shrink-0 text-sm text-white"
                     dateTime={content.publishedAt}
                   >
-                    {dayjs(content.publishedAt).format('YYYY年MM月DD日')}
+                    {dayjs(content.publishedAt).format("YYYY年MM月DD日")}
                   </time>
                 </div>
                 <div className="flex flex-wrap items-center justify-between bg-white p-6"></div>
@@ -50,10 +50,10 @@ export default async function Home() {
                   />
                 )}
               </div>
-            )
+            );
           })}
         </section>
       </div>
     </main>
-  )
+  );
 }

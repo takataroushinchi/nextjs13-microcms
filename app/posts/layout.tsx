@@ -19,7 +19,7 @@ export default function BlogLayout({
           </Suspense>
         </div>
       </aside>
-      <main className="flex flex-1 justify-center">{children}</main>
+      <main className="flex flex-1 items-start">{children}</main>
     </section>
   );
 }

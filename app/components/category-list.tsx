@@ -12,11 +12,20 @@ export const CategoryList = async () => {
   return (
     <div>
       <ul>
+        <li>
+          <Link
+            href={`${getPath("POST")}`}
+            passHref
+            className="group mx-auto block space-y-3 rounded-lg bg-white p-6 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
+          >
+            ALL
+          </Link>
+        </li>
         {contents.map((category) => {
           return (
             <li key={category.id}>
               <Link
-                href={`${getPath("POST", category.id)}`}
+                href={`${getPath("CATEGORY", category.id)}`}
                 passHref
                 className="group mx-auto block space-y-3 rounded-lg bg-white p-6 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
               >

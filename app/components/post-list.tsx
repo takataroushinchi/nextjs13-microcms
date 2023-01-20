@@ -1,9 +1,11 @@
 import { getPath } from "libs/const/path";
-import { getPostList } from "libs/microcms";
+import type { Posts } from "libs/microcms";
 import Link from "next/link";
 
-export const PostList = async () => {
-  const { contents } = await getPostList();
+type Props = Pick<Posts, "contents">;
+
+export const PostList = async (props: Props) => {
+  const { contents } = props;
 
   if (!contents || contents.length === 0) {
     return <h1>No contents</h1>;
@@ -20,7 +22,7 @@ export const PostList = async () => {
                 passHref
                 className="group mx-auto block space-y-3 rounded-lg bg-white p-6 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
               >
-                {post.title}
+                {post.category.name} {post.title}
               </Link>
             </li>
           );

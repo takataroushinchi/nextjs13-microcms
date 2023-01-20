@@ -3,7 +3,7 @@ import { getPostList } from "libs/microcms";
 
 export default async function SearchPage() {
   const { totalCount, offset, limit, contents } = await getPostList({
-    fields: "id,title,caption,target,done",
+    fields: "id,title,caption,target,done,category",
     offset: 0,
     limit: 100,
   });

@@ -29,8 +29,11 @@ export default async function Home() {
                   <h2 className="mr-6 flex-1 font-semibold text-white">
                     {content.title}
                   </h2>
+                  <p className="flex-shrink-0 pl-2 text-sm text-white">
+                    {content.category.name}
+                  </p>
                   <time
-                    className="flex-shrink-0 text-sm text-white"
+                    className="flex-shrink-0 pl-2 text-sm text-white"
                     dateTime={content.publishedAt}
                   >
                     {dayjs(content.publishedAt).format("YYYY年MM月DD日")}

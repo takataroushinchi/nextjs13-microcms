@@ -1,22 +1,22 @@
 import { PostList } from "app/components/post-list";
-// import { getCategoryList } from "libs/microcms";
+import { getCategoryList } from "libs/microcms";
 import { getPostList } from "libs/microcms";
 import { Post } from "libs/microcms";
 
 // ISR
-// export const revalidate = 10;
+export const revalidate = 10;
 
-// export async function generateStaticParams() {
-//   const { contents } = await getCategoryList();
+export async function generateStaticParams() {
+  const { contents } = await getCategoryList();
 
-//   const paths = contents.map((category) => {
-//     return {
-//       postId: category.id,
-//     };
-//   });
+  const paths = contents.map((category) => {
+    return {
+      categoryId: category.id,
+    };
+  });
 
-//   return [...paths];
-// }
+  return [...paths];
+}
 
 export default async function CategoryPage({
   params: { categoryId },

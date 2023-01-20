@@ -28,9 +28,6 @@ export default async function PostDetailPage({
 }) {
   const post = await getPostDetail(postId);
 
-  // ページの生成された時間を取得
-  const time = new Date().toLocaleString();
-
   if (!post) {
     notFound();
   }
@@ -38,24 +35,30 @@ export default async function PostDetailPage({
   const items = [
     { title: "トップ", href: `${getPath("INDEX")}` },
     { title: "案件リスト", href: `${getPath("POSTS")}` },
+    { title: "カテゴリ", href: `${getPath("CATEGORY", post.category.id)}` },
     { title: `${post.title}`, href: "" },
   ].map((item, index) =>
     item.href !== "" ? (
-      <Link href={item.href} key={index} passHref>
+      <Link
+        className="whitespace-nowrap text-sky-700"
+        href={item.href}
+        key={index}
+        passHref
+      >
         {item.title}
       </Link>
     ) : (
-      <span key={index}>{item.title}</span>
+      <span className="text-sm font-semibold" key={index}>
+        {item.title}
+      </span>
     )
   );
 
   return (
     <div>
-      <h1>{post.title}</h1>
-      <h2>{time}</h2>
-      <nav className="borer mt-4 p-8">{items}</nav>
+      <nav className="flex gap-x-2 pb-2">{items}</nav>
       <div className="flex flex-wrap items-center justify-between bg-gray-600 p-6">
-        <h2 className="mr-6 flex-1 font-semibold text-white">{post.title}</h2>
+        <h1 className="mr-6 flex-1 font-semibold text-white">{post.title}</h1>
         <time
           className="flex-shrink-0 text-sm text-white"
           dateTime={post.publishedAt}
@@ -66,7 +69,7 @@ export default async function PostDetailPage({
       <div className="flex flex-wrap items-center justify-between bg-white p-6">
         {post.target && (
           <p className="text-sm font-semibold text-slate-500">
-            ターゲット：{post.target[0]}
+            ターゲット：{post.target[0]}, カテゴリ：{post.category.name}
           </p>
         )}
         {post.done && (

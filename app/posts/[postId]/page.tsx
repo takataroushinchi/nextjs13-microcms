@@ -40,7 +40,7 @@ export default async function PostDetailPage({
   ].map((item, index) =>
     item.href !== "" ? (
       <Link
-        className="whitespace-nowrap text-sky-700"
+        className="whitespace-nowrap pl-2 text-sky-600 underline"
         href={item.href}
         key={index}
         passHref
@@ -48,7 +48,7 @@ export default async function PostDetailPage({
         {item.title}
       </Link>
     ) : (
-      <span className="text-sm font-semibold" key={index}>
+      <span className="text-sm font-semibold line-clamp-1" key={index}>
         {item.title}
       </span>
     )
@@ -56,7 +56,7 @@ export default async function PostDetailPage({
 
   return (
     <div>
-      <nav className="flex gap-x-2 pb-2">{items}</nav>
+      <nav className="flex gap-x-2 divide-x-4 pb-2">{items}</nav>
       <div className="flex flex-wrap items-center justify-between bg-gray-600 p-6">
         <h1 className="mr-6 flex-1 font-semibold text-white">{post.title}</h1>
         <time

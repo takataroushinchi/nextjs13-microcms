@@ -26,7 +26,7 @@ export const Tab = () => {
           {(isActive) => {
             return (
               <div className={isActive ? activeClass : normalClass}>
-                <p className="flex items-center text-sm font-semibold group-hover:text-slate-50">
+                <p className="flex items-center whitespace-nowrap text-sm font-semibold group-hover:text-slate-50">
                   <Icon className="pr-1" />
                   <span>{label}</span>
                 </p>

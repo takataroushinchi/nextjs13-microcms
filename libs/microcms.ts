@@ -28,7 +28,7 @@ export type Blog = {
   content: string;
   eyecatch: MicroCMSImage;
   done: boolean;
-  category: Category;
+  genre: string[];
   createAt: string;
 } & MicroCMSDate;
 

@@ -29,9 +29,6 @@ export default async function Home() {
                   <h2 className="mr-6 flex-1 font-semibold text-white">
                     {content.title}
                   </h2>
-                  <p className="flex-shrink-0 pl-2 text-sm text-white">
-                    {content.category.name}
-                  </p>
                   <time
                     className="flex-shrink-0 pl-2 text-sm text-white"
                     dateTime={content.publishedAt}
@@ -39,6 +36,12 @@ export default async function Home() {
                     {dayjs(content.publishedAt).format("YYYY年MM月DD日")}
                   </time>
                 </div>
+                <p className="flex justify-end gap-x-2 p-2 text-sm text-gray-700">
+                  <span className="font-semibold">ジャンル：</span>
+                  {content.genre.map((i) => (
+                    <span key={i}>{i}</span>
+                  ))}
+                </p>
                 <div className="flex flex-wrap items-center justify-between bg-white p-6"></div>
                 <div
                   className="prose rounded-lg border p-8"

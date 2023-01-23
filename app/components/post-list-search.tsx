@@ -39,7 +39,7 @@ export const PostListSearch: FC<Props> = (props) => {
     if (categoryValue !== "-") {
       filters =
         filters === ""
-          ? `category.id[equals]${categoryValue}`
+          ? `category[equals]${categoryValue}`
           : `${filters}[and]category.id[equals]${categoryValue}`;
     }
 

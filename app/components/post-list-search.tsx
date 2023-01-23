@@ -8,12 +8,18 @@ import { MicroCMSListResponse } from "microcms-js-sdk";
 import Link from "next/link";
 import { ComponentProps, FC, useState } from "react";
 
-type Props = Pick<Posts, "totalCount" | "contents">;
+type Props = Pick<Posts, "totalCount" | "contents"> & {
+  categoryList: {
+    id: string;
+    name: string;
+  };
+};
 
 export const PostListSearch: FC<Props> = (props) => {
   const [search, setSearch] = useState<MicroCMSListResponse<Post>>();
   const [excludeDone, setExcludeDone] = useState(false);
   const [targetValue, setTargetValue] = useState("-");
+  const [categoryValue, setCategoryValue] = useState("-");
 
   const targetList: string[] = [];
   props.contents.forEach((item) => {
@@ -29,6 +35,14 @@ export const PostListSearch: FC<Props> = (props) => {
     const q = event.currentTarget.query.value;
     // console.log(event.currentTarget.target.value);
     let filters = excludeDone ? "done[equals]false" : "";
+    // category.id[equals]b1sn5ew_k7v
+    if (categoryValue !== "-") {
+      filters =
+        filters === ""
+          ? `category.id[equals]${categoryValue}`
+          : `${filters}[and]category.id[equals]${categoryValue}`;
+    }
+
     if (targetValue !== "-") {
       filters =
         filters === ""
@@ -50,13 +64,22 @@ export const PostListSearch: FC<Props> = (props) => {
     setSearch(data);
   };
 
-  const handleSelectChange: ComponentProps<"select">["onChange"] = (event) => {
+  const handleCategorySelectChange: ComponentProps<"select">["onChange"] = (
+    event
+  ) => {
+    setCategoryValue(event.target.value);
+  };
+
+  const handleTargetSelectChange: ComponentProps<"select">["onChange"] = (
+    event
+  ) => {
     setTargetValue(event.target.value);
   };
 
   const handleReset: ComponentProps<"button">["onClick"] = () => {
     setSearch(undefined);
     setExcludeDone(false);
+    setCategoryValue("-");
     setTargetValue("-");
   };
 
@@ -81,9 +104,20 @@ export const PostListSearch: FC<Props> = (props) => {
             placeholder="キーワードを入力"
           />
           <select
-            className="border"
+            className="self-stretch border"
+            value={categoryValue}
+            onChange={handleCategorySelectChange}
+          >
+            {props.categoryList.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+          <select
+            className="self-stretch border"
             value={targetValue}
-            onChange={handleSelectChange}
+            onChange={handleTargetSelectChange}
           >
             {targets.map((target) => (
               <option key={target} value={target}>
@@ -93,19 +127,19 @@ export const PostListSearch: FC<Props> = (props) => {
           </select>
           <button
             type="submit"
-            className="rounded border border-sky-600 bg-sky-600 py-2 px-4 font-bold text-white hover:enabled:bg-blue-500 disabled:opacity-75"
+            className="whitespace-nowrap rounded border border-sky-600 bg-sky-600 py-2 px-4 font-bold text-white hover:enabled:bg-blue-500 disabled:opacity-75"
           >
             検索
           </button>
           <button
             type="reset"
-            className="inline-flex items-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400 disabled:opacity-75"
+            className="inline-flex items-center whitespace-nowrap rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400 disabled:opacity-75"
             onClick={handleReset}
           >
             リセット
           </button>
           <button
-            className="rounded border border-blue-500 bg-transparent py-2 px-4 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white disabled:opacity-75"
+            className="whitespace-nowrap rounded border border-blue-500 bg-transparent py-2 px-4 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white disabled:opacity-75"
             onClick={() => handleSwitch()}
           >
             完了除外 {excludeDone ? "ON" : "OFF"}

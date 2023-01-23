@@ -5,7 +5,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const postResponse = await getPostList({
     q: req.body.q,
     filters: req.body.filters,
-    fields: "id,title,caption,target,done",
+    fields: "id,title,caption,target,done,category",
     offset: 0,
     limit: 100,
   });

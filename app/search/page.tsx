@@ -1,5 +1,6 @@
 import { PostListSearch } from "app/components/post-list-search";
-import { getPostList } from "libs/microcms";
+import type { Categories, Category } from "libs/microcms";
+import { getCategoryList, getPostList } from "libs/microcms";
 
 export default async function SearchPage() {
   const { totalCount, offset, limit, contents } = await getPostList({
@@ -8,13 +9,25 @@ export default async function SearchPage() {
     limit: 100,
   });
 
+  const categoryListData: Categories = await getCategoryList();
+  const categoryList: Pick<Category, "id" | "name">[] =
+    categoryListData.contents.map(({ id, name }) => ({
+      id,
+      name,
+    }));
+  categoryList.unshift({ id: "-", name: "-" });
+
   if (!contents || contents.length === 0) {
     return <h1>No contents</h1>;
   }
 
   return (
     <div>
-      <PostListSearch totalCount={totalCount} contents={contents} />
+      <PostListSearch
+        totalCount={totalCount}
+        contents={contents}
+        categoryList={categoryList}
+      />
     </div>
   );
 }

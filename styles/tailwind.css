@@ -1111,6 +1111,10 @@ video {
   border-left-width: calc(4px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
+.self-stretch {
+  align-self: stretch;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }

@@ -12,7 +12,7 @@ type Props = Pick<Posts, "totalCount" | "contents"> & {
   categoryList: {
     id: string;
     name: string;
-  };
+  }[];
 };
 
 export const PostListSearch: FC<Props> = (props) => {

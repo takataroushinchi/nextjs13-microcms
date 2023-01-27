@@ -1,7 +1,8 @@
-import { CategoryList } from "app/components/category-list";
-import RefreshBtn from "app/components/refresh-btn";
-import Spinner from "app/components/spinner";
+import { CategoryList } from "app/modules/category-list";
+import Spinner from "app/modules/spinner";
 import { Suspense } from "react";
+
+import RefreshButton from "@/app/modules/refresh-button";
 
 export default function BlogLayout({
   children,
@@ -12,7 +13,7 @@ export default function BlogLayout({
     <section className="flex">
       <aside className={`h-[calc(100vh-56px)] w-1/4 bg-gray-200 p-2`}>
         <div className="flex justify-center">
-          <RefreshBtn />
+          <RefreshButton />
           <Suspense fallback={<Spinner />}>
             {/* @ts-ignore*/}
             <CategoryList />

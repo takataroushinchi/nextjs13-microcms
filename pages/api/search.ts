@@ -1,4 +1,4 @@
-import { getPostList } from "libs/microcms";
+import { getPostList } from "lib/microcms";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {

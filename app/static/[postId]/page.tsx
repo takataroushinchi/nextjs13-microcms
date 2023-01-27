@@ -1,5 +1,5 @@
 import parse from "html-react-parser";
-import { getDetail, getList } from "libs/microcms";
+import { getDetail, getList } from "lib/microcms";
 import { notFound } from "next/navigation";
 // import { getDetail, getList } from "../../../libs/microcms";
 

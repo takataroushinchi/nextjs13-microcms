@@ -1,5 +1,5 @@
-import Spinner from "app/components/spinner";
-import { getList } from "libs/microcms";
+import Spinner from "app/modules/spinner";
+import { getList } from "lib/microcms";
 import { Suspense } from "react";
 
 import { Blog } from "./blog";

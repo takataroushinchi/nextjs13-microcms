@@ -1,5 +1,5 @@
-import { getPath } from "libs/const/path";
-import { getCategoryList } from "libs/microcms";
+import { getPath } from "lib/const/path";
+import { getCategoryList } from "lib/microcms";
 import Link from "next/link";
 
 export const CategoryList = async () => {

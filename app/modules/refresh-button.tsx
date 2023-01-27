@@ -1,16 +1,18 @@
 "use client";
 
+import { RefreshCcw } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-export default function RefreshBtn() {
+export default function RefreshButton() {
   const router = useRouter();
   return (
     <button
-      className="rounded bg-indigo-600 px-3 py-1 font-medium text-white hover:bg-indigo-700"
+      className="flex items-center rounded bg-indigo-600 px-3 py-1 font-medium text-white hover:bg-indigo-700"
       onClick={() => {
         router.refresh();
       }}
     >
+      <RefreshCcw />
       Refresh current route
     </button>
   );

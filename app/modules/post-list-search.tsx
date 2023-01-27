@@ -1,12 +1,15 @@
 "use client";
 
-import { IconSearch } from "@tabler/icons";
 import axios from "axios";
-import { getPath } from "libs/const/path";
-import type { Post, Posts } from "libs/microcms";
+import { getPath } from "lib/const/path";
+import type { Post, Posts } from "lib/microcms";
+import { Search } from "lucide-react";
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import Link from "next/link";
 import { ComponentProps, FC, useState } from "react";
+
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 type Props = Pick<Posts, "totalCount" | "contents"> & {
   categoryList: {
@@ -39,7 +42,7 @@ export const PostListSearch: FC<Props> = (props) => {
     if (categoryValue !== "-") {
       filters =
         filters === ""
-          ? `category[equals]${categoryValue}`
+          ? `categoryj[equals]${categoryValue}`
           : `${filters}[and]category.id[equals]${categoryValue}`;
     }
 
@@ -83,9 +86,9 @@ export const PostListSearch: FC<Props> = (props) => {
     setTargetValue("-");
   };
 
-  const handleSwitch = () => {
-    setExcludeDone((prevState) => !prevState); // トグルスイッチ
-  };
+  // const handleSwitch = () => {
+  //   setExcludeDone((prevState) => !prevState); // トグルスイッチ
+  // };
 
   const contents = search ? search.contents : props.contents;
   const totalCount = search ? search.totalCount : props.totalCount;
@@ -95,7 +98,7 @@ export const PostListSearch: FC<Props> = (props) => {
       <form onSubmit={handleSubmit}>
         <div className="flex items-center justify-start gap-x-2">
           <div>
-            <IconSearch size="20" />
+            <Search size="20" />
           </div>
           <input
             type="search"
@@ -138,12 +141,20 @@ export const PostListSearch: FC<Props> = (props) => {
           >
             リセット
           </button>
-          <button
+          {/* <button
             className="whitespace-nowrap rounded border border-blue-500 bg-transparent py-2 px-4 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white disabled:opacity-75"
             onClick={() => handleSwitch()}
           >
             完了除外 {excludeDone ? "ON" : "OFF"}
-          </button>
+          </button> */}
+          <Switch
+            id="exclude-done"
+            checked={excludeDone}
+            onCheckedChange={setExcludeDone}
+          />
+          <Label htmlFor="exclude-done">
+            完了除外 {excludeDone ? "ON" : "OFF"}
+          </Label>
         </div>
       </form>
       <p className="text-xm p-2">{`${

@@ -1,10 +1,11 @@
-import { MarkdownField } from "app/components/MarkdownField";
-import MicroCMSImage from "app/components/MicroCMSImage";
 import dayjs from "dayjs";
-import { getPath } from "libs/const/path";
-import { getPostDetail, getPostList } from "libs/microcms";
+import { getPath } from "lib/const/path";
+import { getPostDetail, getPostList } from "lib/microcms";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+import { MarkdownField } from "@/app/modules/markdown-field";
+import MicroCMSImage from "@/app/modules/microcms-image";
 
 // ISR
 export const revalidate = 10;

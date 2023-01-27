@@ -1,16 +1,16 @@
 "use client";
 
-import { IconHome, IconList } from "@tabler/icons";
-import { getPath } from "libs/const/path";
-import { ActiveLink } from "libs/next";
+import { getPath } from "lib/const/path";
+import { ActiveLink } from "lib/next";
+import { FolderTree, Home, List, Search } from "lucide-react";
 
 const ITEMS = [
-  { href: getPath("INDEX"), label: "トップ", Icon: IconHome },
-  { href: getPath("POSTS"), label: "案件", Icon: IconList },
-  { href: getPath("SEARCH"), label: "検索", Icon: IconList },
-  { href: getPath("STATICS"), label: "static", Icon: IconList },
-  { href: getPath("DYNAMICS"), label: "dynamic", Icon: IconList },
-  { href: getPath("SUSPENSE"), label: "suspense", Icon: IconList },
+  { href: getPath("INDEX"), label: "トップ", Icon: Home },
+  { href: getPath("POSTS"), label: "プロジェクト", Icon: FolderTree },
+  { href: getPath("SEARCH"), label: "検索", Icon: Search },
+  { href: getPath("STATICS"), label: "static", Icon: List },
+  { href: getPath("DYNAMICS"), label: "dynamic", Icon: List },
+  { href: getPath("SUSPENSE"), label: "suspense", Icon: List },
 ];
 
 const activeClass =
@@ -18,7 +18,7 @@ const activeClass =
 const normalClass =
   "[&>*]:text-sky-600 group flex-1 space-y-4 rounded-sm bg-slate-50 p-4 shadow ring-1 ring-slate-900/5 hover:bg-sky-600 hover:ring-sky-600";
 
-export const Tab = () => {
+export const GlobalNavigation = () => {
   return (
     <nav className="flex gap-x-2 pb-8">
       {ITEMS.map(({ label, href, Icon }) => (

@@ -1,6 +1,6 @@
-import { PostListSearch } from "app/components/post-list-search";
-import type { Categories, Category } from "libs/microcms";
-import { getCategoryList, getPostList } from "libs/microcms";
+import { PostListSearch } from "app/modules/post-list-search";
+import type { Categories, Category } from "lib/microcms";
+import { getCategoryList, getPostList } from "lib/microcms";
 
 export default async function SearchPage() {
   const { totalCount, offset, limit, contents } = await getPostList({

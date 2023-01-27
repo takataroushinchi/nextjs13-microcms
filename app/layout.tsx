@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 
-import { Tab } from "app/components/Tab";
+import { GlobalNavigation } from "@/app/modules/global-navigation";
 
 export default function RootLayout({
   children,
@@ -15,7 +15,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <Tab />
+        <GlobalNavigation />
         {children}
       </body>
     </html>

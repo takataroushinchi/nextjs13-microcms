@@ -1,4 +1,4 @@
-import { getList } from "libs/microcms";
+import { getList } from "lib/microcms";
 
 export async function Blog() {
   const { contents } = await getList();

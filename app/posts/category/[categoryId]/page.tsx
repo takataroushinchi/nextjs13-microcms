@@ -1,7 +1,7 @@
-import { PostList } from "app/components/post-list";
-import { getCategoryList } from "libs/microcms";
-import { getPostList } from "libs/microcms";
-import { Post } from "libs/microcms";
+import { PostList } from "app/modules/post-list";
+import { getCategoryList } from "lib/microcms";
+import { getPostList } from "lib/microcms";
+import { Post } from "lib/microcms";
 
 // ISR
 export const revalidate = 10;

@@ -1,4 +1,4 @@
-import { getList } from "libs/microcms";
+import { getList } from "lib/microcms";
 import Link from "next/link";
 
 export default async function StaticPage() {

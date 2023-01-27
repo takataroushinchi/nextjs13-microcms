@@ -1,7 +1,8 @@
 import { Inter } from "@next/font/google";
-import MicroCMSImage from "app/components/MicroCMSImage";
 import dayjs from "dayjs";
-import { getBlogList } from "libs/microcms";
+import { getBlogList } from "lib/microcms";
+
+import MicroCMSImage from "@/app/modules/microcms-image";
 
 import styles from "./page.module.css";
 

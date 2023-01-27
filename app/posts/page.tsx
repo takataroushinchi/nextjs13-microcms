@@ -1,5 +1,5 @@
-import { PostList } from "app/components/post-list";
-import { getPostList } from "libs/microcms";
+import { PostList } from "app/modules/post-list";
+import { getPostList } from "lib/microcms";
 
 export default async function PostsPage() {
   const { totalCount, offset, limit, contents } = await getPostList({

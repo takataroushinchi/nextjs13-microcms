@@ -1,5 +1,5 @@
-import { getPath } from "libs/const/path";
-import type { Posts } from "libs/microcms";
+import { getPath } from "lib/const/path";
+import type { Posts } from "lib/microcms";
 import Link from "next/link";
 
 type Props = Pick<Posts, "contents">;

@@ -1,4 +1,4 @@
-import { getList } from "libs/microcms";
+import { getList } from "lib/microcms";
 import { use } from "react";
 
 export function BlogUse() {

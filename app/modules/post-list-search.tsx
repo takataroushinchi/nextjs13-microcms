@@ -9,6 +9,13 @@ import Link from "next/link";
 import { ComponentProps, FC, useState } from "react";
 
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 
 type Props = Pick<Posts, "totalCount" | "contents"> & {
@@ -42,7 +49,7 @@ export const PostListSearch: FC<Props> = (props) => {
     if (categoryValue !== "-") {
       filters =
         filters === ""
-          ? `categoryj[equals]${categoryValue}`
+          ? `category[equals]${categoryValue}`
           : `${filters}[and]category.id[equals]${categoryValue}`;
     }
 
@@ -67,17 +74,17 @@ export const PostListSearch: FC<Props> = (props) => {
     setSearch(data);
   };
 
-  const handleCategorySelectChange: ComponentProps<"select">["onChange"] = (
-    event
-  ) => {
-    setCategoryValue(event.target.value);
-  };
+  // const handleCategorySelectChange: ComponentProps<"select">["onChange"] = (
+  //   event
+  // ) => {
+  //   setCategoryValue(event.target.value);
+  // };
 
-  const handleTargetSelectChange: ComponentProps<"select">["onChange"] = (
-    event
-  ) => {
-    setTargetValue(event.target.value);
-  };
+  // const handleTargetSelectChange: ComponentProps<"select">["onChange"] = (
+  //   event
+  // ) => {
+  //   setTargetValue(event.target.value);
+  // };
 
   const handleReset: ComponentProps<"button">["onClick"] = () => {
     setSearch(undefined);
@@ -106,7 +113,7 @@ export const PostListSearch: FC<Props> = (props) => {
             className="border p-2"
             placeholder="キーワードを入力"
           />
-          <select
+          {/* <select
             className="self-stretch border"
             value={categoryValue}
             onChange={handleCategorySelectChange}
@@ -116,8 +123,8 @@ export const PostListSearch: FC<Props> = (props) => {
                 {category.name}
               </option>
             ))}
-          </select>
-          <select
+          </select> */}
+          {/* <select
             className="self-stretch border"
             value={targetValue}
             onChange={handleTargetSelectChange}
@@ -127,7 +134,39 @@ export const PostListSearch: FC<Props> = (props) => {
                 {target}
               </option>
             ))}
-          </select>
+          </select> */}
+          <Select
+            defaultValue={categoryValue}
+            value={categoryValue}
+            onValueChange={setCategoryValue}
+          >
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Category" />
+            </SelectTrigger>
+            <SelectContent>
+              {props.categoryList.map((category) => (
+                <SelectItem key={category.id} value={category.id}>
+                  {category.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Select
+            defaultValue={targetValue}
+            value={targetValue}
+            onValueChange={setTargetValue}
+          >
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Target" />
+            </SelectTrigger>
+            <SelectContent>
+              {targets.map((target) => (
+                <SelectItem key={target} value={target}>
+                  {target}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           <button
             type="submit"
             className="whitespace-nowrap rounded border border-sky-600 bg-sky-600 py-2 px-4 font-bold text-white hover:enabled:bg-blue-500 disabled:opacity-75"

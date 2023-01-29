@@ -16,7 +16,7 @@ export const CategoryList = async () => {
           <Link
             href={`${getPath("POST")}`}
             passHref
-            className="group mx-auto block space-y-3 rounded-lg bg-white p-6 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
+            className="group mx-auto block space-y-3 rounded-lg bg-white p-6 text-slate-50 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
           >
             ALL
           </Link>
@@ -27,7 +27,7 @@ export const CategoryList = async () => {
               <Link
                 href={`${getPath("CATEGORY", category.id)}`}
                 passHref
-                className="group mx-auto block space-y-3 rounded-lg bg-white p-6 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
+                className="group mx-auto block space-y-3 rounded-lg bg-white p-6 text-slate-50 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
               >
                 {category.name}
               </Link>

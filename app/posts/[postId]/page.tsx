@@ -40,24 +40,25 @@ export default async function PostDetailPage({
     { title: `${post.title}`, href: "" },
   ].map((item, index) =>
     item.href !== "" ? (
-      <Link
-        className="whitespace-nowrap pl-2 text-sky-600 underline"
-        href={item.href}
-        key={index}
-        passHref
-      >
-        {item.title}
-      </Link>
+      <li key={index}>
+        <Link
+          className="whitespace-nowrap pl-2 text-sky-600 underline"
+          href={item.href}
+          passHref
+        >
+          {item.title}
+        </Link>
+      </li>
     ) : (
-      <span className="text-sm font-semibold line-clamp-1" key={index}>
-        {item.title}
-      </span>
+      <li key={index}>{item.title}</li>
     )
   );
 
   return (
     <div>
-      <nav className="flex gap-x-2 divide-x-4 pb-2">{items}</nav>
+      <nav className="text-s breadcrumbs">
+        <ul>{items}</ul>
+      </nav>
       <div className="flex flex-wrap items-center justify-between bg-gray-600 p-6">
         <h1 className="mr-6 flex-1 font-semibold text-white">{post.title}</h1>
         <time

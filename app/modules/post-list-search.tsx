@@ -167,15 +167,12 @@ export const PostListSearch: FC<Props> = (props) => {
               ))}
             </SelectContent>
           </Select>
-          <button
-            type="submit"
-            className="whitespace-nowrap rounded border border-sky-600 bg-sky-600 py-2 px-4 font-bold text-white hover:enabled:bg-blue-500 disabled:opacity-75"
-          >
+          <button type="submit" className="btn-primary btn">
             検索
           </button>
           <button
             type="reset"
-            className="inline-flex items-center whitespace-nowrap rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400 disabled:opacity-75"
+            className="btn-outline btn"
             onClick={handleReset}
           >
             リセット

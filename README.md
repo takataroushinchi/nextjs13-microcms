@@ -20,4 +20,12 @@ Lucide Powered by Vercel
 
 [shadcn/docs](https://ui.shadcn.com/docs)
 
+## RippleUI
+
+Tailwind ベースのコンポーネントクラスライブラリ
+
+[ripple](https://www.ripple-ui.com/)
+
+[ripple/docs](https://www.ripple-ui.com/docs/get-started/installation)
+
 ## Deploy on Vercel

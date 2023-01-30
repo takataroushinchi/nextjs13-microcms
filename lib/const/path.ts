@@ -14,7 +14,7 @@ const PATH = {
   SIGN_IN: "/sign-in",
   SIGN_UP: "/sign-up",
   FORGOT_PASSWORD: "/forgot-password",
-} as const;
+} as const satisfies Record<string, `/${string}`>;
 
 export const getPath = (pathKey: keyof typeof PATH, ...args: string[]) => {
   const val = PATH[pathKey];

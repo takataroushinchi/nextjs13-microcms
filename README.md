@@ -14,7 +14,9 @@ Lucide Powered by Vercel
 
 [lucide-react](https://github.com/lucide-icons/lucide/tree/main/packages/lucide-react#lucide-react)
 
-## Learn More
+## ShadcnUI
+
+Radix UI と Tailwind CSS 製 プロジェクトに必要な構成を自前で実装
 
 [shadcn/ui](https://ui.shadcn.com/)
 

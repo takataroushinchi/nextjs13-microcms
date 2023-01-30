@@ -3,6 +3,9 @@
 import { getPath } from "lib/const/path";
 import { ActiveLink } from "lib/next";
 import { FolderTree, Home, List, Search } from "lucide-react";
+import { ThemeProvider } from "next-themes";
+
+import ThemesSwitch from "@/app/modules/themes-switch";
 
 const ITEMS = [
   { href: getPath("INDEX"), label: "トップ", Icon: Home },
@@ -35,6 +38,9 @@ export const GlobalNavigation = () => {
           }}
         </ActiveLink>
       ))}
+      <ThemeProvider attribute="data-theme">
+        <ThemesSwitch />
+      </ThemeProvider>
     </nav>
   );
 };

@@ -59,7 +59,7 @@ export default async function PostDetailPage({
       <nav className="text-s breadcrumbs">
         <ul>{items}</ul>
       </nav>
-      <div className="flex flex-wrap items-center justify-between bg-gray-600 p-6">
+      <div className="flex flex-wrap items-center justify-between bg-gray-900 p-6">
         <h1 className="mr-6 flex-1 font-semibold text-white">{post.title}</h1>
         <time
           className="flex-shrink-0 text-sm text-white"
@@ -68,18 +68,16 @@ export default async function PostDetailPage({
           {dayjs(post.publishedAt).format("YYYY年MM月DD日")}
         </time>
       </div>
-      <div className="flex flex-wrap items-center justify-between bg-white p-6">
+      <div className="flex flex-wrap items-center justify-between bg-white p-6 font-semibold text-gray-900 dark:text-gray-700">
         {post.target && (
-          <p className="text-sm font-semibold text-slate-500">
+          <p className="text-sm">
             ターゲット：{post.target[0]}, カテゴリ：{post.category.name}
           </p>
         )}
-        {post.done && (
-          <p className="text-sm font-semibold text-slate-500">完了</p>
-        )}
+        {post.done && <p className="text-sm">完了</p>}
       </div>
       <div
-        className="prose rounded-lg border p-8"
+        className="prose border bg-white p-8"
         dangerouslySetInnerHTML={{ __html: post.body }}
       />
       <div>

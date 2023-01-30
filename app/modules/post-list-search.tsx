@@ -167,12 +167,12 @@ export const PostListSearch: FC<Props> = (props) => {
               ))}
             </SelectContent>
           </Select>
-          <button type="submit" className="btn-primary btn">
+          <button type="submit" className="btn-primary btn whitespace-nowrap">
             検索
           </button>
           <button
             type="reset"
-            className="btn-outline btn"
+            className="btn-outline btn whitespace-nowrap"
             onClick={handleReset}
           >
             リセット
@@ -188,7 +188,7 @@ export const PostListSearch: FC<Props> = (props) => {
             checked={excludeDone}
             onCheckedChange={setExcludeDone}
           />
-          <Label htmlFor="exclude-done">
+          <Label htmlFor="exclude-done" className="whitespace-nowrap">
             完了除外 {excludeDone ? "ON" : "OFF"}
           </Label>
         </div>
@@ -196,28 +196,28 @@ export const PostListSearch: FC<Props> = (props) => {
       <p className="text-xm p-2">{`${
         search ? "検索結果" : "記事の総数"
       }:${totalCount}`}</p>
-      <ul className="mt-4 space-y-4 [&>*]:rounded-lg [&>*]:bg-white [&>*]:p-4 [&>*]:shadow">
+      <ul className="mt-4 space-y-4 [&>*]:bg-white [&>*]:p-0 [&>*]:shadow">
         {contents.map((content) => {
           return (
             <li key={content.id}>
               <Link
                 href={`${getPath("POST", content.id)}`}
                 passHref
-                className="group mx-auto block space-y-3 rounded-lg bg-white p-6 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
+                className="group mx-auto block space-y-3 bg-white p-6 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
               >
-                <p className="text-sm font-semibold text-slate-900 group-hover:text-white">
+                <p className="text-sm font-semibold text-black group-hover:text-white">
                   {content.title}
                 </p>
-                <p className="text-sm text-slate-500 group-hover:text-white">
+                <p className="text-sm text-slate-900 group-hover:text-white">
                   {content.caption}
                 </p>
                 {content.target && (
-                  <p className="text-sm font-semibold text-slate-500 group-hover:text-white">
+                  <p className="text-sm font-semibold text-slate-900 group-hover:text-white">
                     ターゲット：{content.target[0]}
                   </p>
                 )}
                 {content.done && (
-                  <p className="text-sm font-semibold text-slate-500 group-hover:text-white">
+                  <p className="text-sm font-semibold text-slate-900 group-hover:text-white">
                     完了
                   </p>
                 )}

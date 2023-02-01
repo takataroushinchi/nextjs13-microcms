@@ -56,7 +56,7 @@ export default async function PostDetailPage({
 
   return (
     <div>
-      <nav className="text-s breadcrumbs">
+      <nav className="text-s breadcrumbs pb-2">
         <ul>{items}</ul>
       </nav>
       <div className="flex flex-wrap items-center justify-between bg-gray-900 p-6">
@@ -76,10 +76,12 @@ export default async function PostDetailPage({
         )}
         {post.done && <p className="text-sm">完了</p>}
       </div>
-      <div
-        className="prose border bg-white p-8"
-        dangerouslySetInnerHTML={{ __html: post.body }}
-      />
+      <div className="min-h-[calc(100vh-240px)] border bg-white p-8">
+        <div
+          className="prose"
+          dangerouslySetInnerHTML={{ __html: post.body }}
+        />
+      </div>
       <div>
         {post.topic?.map((topic, id) => (
           <div key={id}>

@@ -17,9 +17,7 @@ export default async function Home() {
 
   return (
     <main className={`${styles.main} bg-gray-200 pl-2`}>
-      <h1 className={inter.className}>
-        デザインテンファイル管理画面 <span>-&gt;</span>
-      </h1>
+      <h1 className={inter.className}>デザイン管理ドキュメント</h1>
       <div className="flex gap-x-2 pb-8">
         <section className="mt-4 space-y-4 [&>*]:rounded-lg [&>*]:bg-white [&>*]:p-4 [&>*]:shadow">
           {contents.map((content) => {

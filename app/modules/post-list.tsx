@@ -13,16 +13,23 @@ export const PostList = async (props: Props) => {
 
   return (
     <div>
-      <ul className="space-y-4 [&>*]:rounded-lg">
+      <ul className="space-y-4 [&>*]:bg-white [&>*]:p-0">
         {contents.map((post) => {
           return (
             <li key={post.id}>
               <Link
                 href={`${getPath("POST", post.id)}`}
                 passHref
-                className="group mx-auto block bg-white p-6 text-black shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500 dark:text-slate-50"
+                className="group mx-auto block space-y-3 bg-white p-6 shadow ring-1 ring-slate-900/5 hover:bg-sky-700 hover:ring-sky-500"
               >
-                {post.category.name} {post.title}
+                <p className="text-sm font-semibold text-black group-hover:text-white">
+                  {post.title}
+                </p>
+                {post.category && (
+                  <p className="text-sm font-semibold text-slate-900 group-hover:text-white">
+                    {post.category.name}
+                  </p>
+                )}
               </Link>
             </li>
           );

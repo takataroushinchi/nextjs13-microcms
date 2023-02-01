@@ -101,7 +101,7 @@ export const PostListSearch: FC<Props> = (props) => {
   const totalCount = search ? search.totalCount : props.totalCount;
 
   return (
-    <div className="pl-4">
+    <div className="px-4">
       <form onSubmit={handleSubmit}>
         <div className="flex items-center justify-start gap-x-2">
           <div>
@@ -196,7 +196,7 @@ export const PostListSearch: FC<Props> = (props) => {
       <p className="text-xm p-2">{`${
         search ? "検索結果" : "記事の総数"
       }:${totalCount}`}</p>
-      <ul className="mt-4 space-y-4 [&>*]:bg-white [&>*]:p-0 [&>*]:shadow">
+      <ul className="space-y-4 [&>*]:bg-white [&>*]:p-0">
         {contents.map((content) => {
           return (
             <li key={content.id}>

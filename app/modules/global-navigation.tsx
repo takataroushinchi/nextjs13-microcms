@@ -22,13 +22,13 @@ const normalClass =
 
 export const GlobalNavigation = () => {
   return (
-    <nav className="flex gap-x-2 pb-8">
+    <nav className="flex items-center gap-x-2 pb-8">
       {ITEMS.map(({ label, href, Icon }) => (
         <ActiveLink key={label} href={href} passHref>
           {(isActive) => {
             return (
               <div className={isActive ? activeClass : normalClass}>
-                <p className="flex items-center whitespace-nowrap text-sm font-semibold group-hover:text-slate-50">
+                <p className="flex items-center justify-center whitespace-nowrap text-sm font-semibold group-hover:text-slate-50">
                   <Icon className="pr-1" />
                   <span>{label}</span>
                 </p>

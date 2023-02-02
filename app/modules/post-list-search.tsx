@@ -140,12 +140,16 @@ export const PostListSearch: FC<Props> = (props) => {
             value={categoryValue}
             onValueChange={setCategoryValue}
           >
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[180px] text-slate-900 dark:text-white">
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
               {props.categoryList.map((category) => (
-                <SelectItem key={category.id} value={category.id}>
+                <SelectItem
+                  key={category.id}
+                  value={category.id}
+                  className="text-black dark:text-white"
+                >
                   {category.name}
                 </SelectItem>
               ))}
@@ -156,12 +160,16 @@ export const PostListSearch: FC<Props> = (props) => {
             value={targetValue}
             onValueChange={setTargetValue}
           >
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[180px] text-slate-900 dark:text-white">
               <SelectValue placeholder="Target" />
             </SelectTrigger>
             <SelectContent>
               {targets.map((target) => (
-                <SelectItem key={target} value={target}>
+                <SelectItem
+                  key={target}
+                  value={target}
+                  className="text-black dark:text-white"
+                >
                   {target}
                 </SelectItem>
               ))}

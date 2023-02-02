@@ -1,16 +1,24 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-export default function ThemesSwitch() {
-  const { theme, setTheme } = useTheme();
+export default function ThemesSwitchSt() {
+  const [theme, setTheme] = useState("");
 
-  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (theme === "dark") {
+      document.documentElement.dataset["theme"] = "dark";
+    } else if (theme === "light") {
+      document.documentElement.dataset["theme"] = "light";
+    } else {
+      const mode =
+        window.matchMedia("(prefers-color-scheme: dark)").matches == true
+          ? "dark"
+          : "light";
+      setTheme(mode);
+    }
+  }, [theme]);
 
   return (
     <button
@@ -19,7 +27,7 @@ export default function ThemesSwitch() {
       className="h-12 w-12 p-3 md:p-1"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      {mounted && (
+      {theme && (
         <>
           {theme === "dark" ? (
             <Sun height={"25"} width={"25"} />

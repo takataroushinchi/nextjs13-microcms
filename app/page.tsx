@@ -17,7 +17,11 @@ export default async function Home() {
 
   return (
     <main className={`${styles.main} bg-gray-200 pl-2`}>
-      <h1 className={inter.className}>デザイン管理ドキュメント</h1>
+      <h1
+        className={`${inter.className} mt-10 scroll-m-20 py-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0`}
+      >
+        デザイン管理ドキュメント
+      </h1>
       <div className="flex gap-x-2 pb-8">
         <section className="mt-4 space-y-4 [&>*]:rounded-lg [&>*]:bg-white [&>*]:p-4 [&>*]:shadow">
           {contents.map((content) => {
@@ -40,7 +44,6 @@ export default async function Home() {
                     <span key={i}>{i}</span>
                   ))}
                 </p>
-                <div className="flex flex-wrap items-center justify-between bg-white p-6"></div>
                 <div
                   className="prose rounded-lg border p-8"
                   dangerouslySetInnerHTML={{ __html: content.content }}

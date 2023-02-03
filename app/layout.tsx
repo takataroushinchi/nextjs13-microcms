@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 
 import { GlobalNavigation } from "@/app/modules/global-navigation";
+import { ScrollTrigger } from "@/app/modules/scroll-trigger";
 
 export default function RootLayout({
   children,
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <GlobalNavigation />
         {children}
+        <ScrollTrigger />
       </body>
     </html>
   );

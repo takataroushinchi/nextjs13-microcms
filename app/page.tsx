@@ -1,8 +1,7 @@
 import { Inter } from "@next/font/google";
-import dayjs from "dayjs";
 import { getBlogList } from "lib/microcms";
 
-import MicroCMSImage from "@/app/modules/microcms-image";
+import { GenreList } from "@/app/modules/genre-list";
 
 import styles from "./page.module.css";
 
@@ -22,45 +21,8 @@ export default async function Home() {
       >
         デザイン管理ドキュメント
       </h1>
-      <div className="flex gap-x-2 pb-8">
-        <section className="mt-4 space-y-4 [&>*]:rounded-lg [&>*]:bg-white [&>*]:p-4 [&>*]:shadow">
-          {contents.map((content) => {
-            return (
-              <div key={content.id}>
-                <div className="flex flex-wrap items-center justify-between bg-gray-900 p-6">
-                  <h2 className="mr-6 flex-1 font-semibold text-white">
-                    {content.title}
-                  </h2>
-                  <time
-                    className="flex-shrink-0 pl-2 text-sm text-white"
-                    dateTime={content.publishedAt}
-                  >
-                    {dayjs(content.publishedAt).format("YYYY年MM月DD日")}
-                  </time>
-                </div>
-                <p className="flex justify-end gap-x-2 p-2 text-sm text-gray-900 dark:text-gray-700">
-                  <span className="font-semibold">ジャンル：</span>
-                  {content.genre.map((i) => (
-                    <span key={i}>{i}</span>
-                  ))}
-                </p>
-                <div
-                  className="prose rounded-lg border p-8"
-                  dangerouslySetInnerHTML={{ __html: content.content }}
-                />
-                {content.eyecatch && (
-                  <MicroCMSImage
-                    src={content.eyecatch.url}
-                    width={content.eyecatch.width}
-                    height={content.eyecatch.height}
-                    alt=""
-                  />
-                )}
-              </div>
-            );
-          })}
-        </section>
-      </div>
+      {/* @ts-expect-error Server Component */}
+      <GenreList contents={contents} genreId="" />
     </main>
   );
 }

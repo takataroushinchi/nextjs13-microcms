@@ -24,7 +24,7 @@ export default function ThemesSwitchSt() {
     <button
       aria-label="DarkModeToggle"
       type="button"
-      className="grid h-12 w-12 place-items-center rounded-full bg-slate-50 p-4 ring-2 ring-slate-900/5 hover:bg-slate-600 hover:ring-4 dark:hover:bg-sky-600 md:p-1"
+      className="grid h-12 w-12 place-items-center rounded-full bg-slate-50 p-4 ring-2 ring-slate-900/5 hover:bg-slate-600 hover:ring-4 dark:bg-slate-600/30 dark:hover:bg-sky-600 md:p-1"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme && (

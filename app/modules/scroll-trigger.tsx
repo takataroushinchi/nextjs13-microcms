@@ -14,7 +14,7 @@ export const ScrollTrigger = () => {
     <button
       aria-label="ScrollTrigger"
       type="button"
-      className="btn-outline fixed bottom-4 right-4 grid h-12 w-12 place-items-center bg-white shadow hover:bg-slate-600 hover:shadow-lg dark:hover:bg-sky-600"
+      className="btn-outline fixed bottom-4 right-4 grid h-12 w-12 place-items-center bg-white shadow hover:bg-slate-600 hover:shadow-lg dark:bg-slate-600 dark:hover:bg-sky-600"
       onClick={toTop}
     >
       <ArrowUp />

@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "tailwindcss ./styles/globals.css --output ./styles/tailwind.css && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "watch:css": "npx tailwindcss -i ./styles/globals.css -o ./public/tailwind.css --watch",
+    "watch:storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook dev -p 6006",
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
+    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -35,9 +39,15 @@
     "tailwindcss-animate": "^1.0.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/react": "^6.5.16",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.13",
+    "babel-loader": "^8.3.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",

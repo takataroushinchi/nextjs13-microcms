@@ -7,8 +7,8 @@ export default {
   title: "ShadcnUI/Label",
   component: Label,
   argTypes: {
-    htmlFor: { control: "color" },
-    className: { control: "color" },
+    htmlFor: { control: "text" },
+    className: { control: "text" },
   },
 } as ComponentMeta<typeof Label>;
 
@@ -22,4 +22,5 @@ Primary.args = {
   className: "whitespace-nowrap",
 };
 
+export const Error = Template.bind({});
 export const Disabled = Template.bind({});

@@ -133,3 +133,28 @@ $ npm run watch:storybook
 [Chromatic](https://www.chromatic.com/)
 
 Chromatic は、UI フィードバック、ビジュアルテスト、およびドキュメントの収集を自動化するため、手作業を減らしてより迅速に反復できます。
+
+GitHub、GitLab、Bitbucket、または電子メールでサインインし、chromatic プロジェクトを作成後 `<project-token>` を取得
+
+Publish S4UI’s Storybook
+
+chromatic のインストール
+
+```
+$ npm install --save-dev chromatic
+```
+
+chromatic の実行（storybook-static 生成と同様の処理＋ CDN ホスティング）
+Publish your Storybook
+On the command line, publish to Chromatic’s secure CDN for the first time with the following command:
+
+```
+$ npx chromatic --project-token=<your-project-token>
+```
+
+完了すると、ビルド ステータスと公開された Storybook へのリンクが表示されます。
+
+```
+> Build 1 published.
+> View it online at https://www.chromatic.com/setup?appId=63e32e49b55e96f4b32526fb
+```

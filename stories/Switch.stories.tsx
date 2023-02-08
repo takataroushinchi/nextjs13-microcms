@@ -12,12 +12,14 @@ export default {
   },
 } as ComponentMeta<typeof Switch>;
 
-const Template: ComponentStory<typeof Switch> = (args) => <Switch {...args} />;
+const SwitchTemplate: ComponentStory<typeof Switch> = (args) => (
+  <Switch {...args} />
+);
 
-export const Checked = Template.bind({});
+export const Checked = SwitchTemplate.bind({});
 Checked.args = {
   checked: false,
   className: "whitespace-nowrap",
 };
 
-export const Disabled = Template.bind({});
+export const Disabled = SwitchTemplate.bind({});

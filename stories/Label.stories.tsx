@@ -12,15 +12,15 @@ export default {
   },
 } as ComponentMeta<typeof Label>;
 
-const Template: ComponentStory<typeof Label> = (args) => (
+const LabelTemplate: ComponentStory<typeof Label> = (args) => (
   <Label {...args}>ラベル</Label>
 );
 
-export const Primary = Template.bind({});
+export const Primary = LabelTemplate.bind({});
 Primary.args = {
   htmlFor: "exclude-done",
   className: "whitespace-nowrap",
 };
 
-export const Error = Template.bind({});
-export const Disabled = Template.bind({});
+export const Error = LabelTemplate.bind({});
+export const Disabled = LabelTemplate.bind({});

@@ -136,6 +136,8 @@ Chromatic は、UI フィードバック、ビジュアルテスト、および�
 
 GitHub、GitLab、Bitbucket、または電子メールでサインインし、chromatic プロジェクトを作成後 `<project-token>` を取得
 
+（管理画面から確認する場合は、 Manage -> Configure ）
+
 Publish S4UI’s Storybook
 
 chromatic のインストール

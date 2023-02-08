@@ -1,41 +1,75 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React from "react";
 
-import { Button } from './Button';
+import { Button } from "./Button";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: "RippleUI/Button",
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
-  label: 'Button',
+  status: true,
+  label: "Button",
+};
+
+export const PrimaryOutline = Template.bind({});
+PrimaryOutline.args = {
+  status: true,
+  colors: "primary",
+  outline: true,
+  label: "Button",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
+  status: true,
+  colors: "secondary",
+  label: "Button",
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
-  label: 'Button',
+  size: "lg",
+  label: "Button",
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
-  label: 'Button',
+  size: "sm",
+  label: "Button",
+};
+
+export const Ghost = Template.bind({});
+Ghost.args = {
+  size: "sm",
+  ghost: true,
+  label: "Button",
+};
+
+export const Rounded = Template.bind({});
+Rounded.args = {
+  size: "sm",
+  rounded: true,
+  label: "Button",
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  size: "sm",
+  loading: true,
+  label: "Button",
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  size: "sm",
+  disabled: true,
+  label: "Button",
 };

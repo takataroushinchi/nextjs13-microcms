@@ -1,45 +1,48 @@
-import React from 'react';
-import './button.css';
+import React from "react";
 
 interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
+  status?: boolean;
+  outline?: boolean;
+  ghost?: boolean;
+  rounded?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
   backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
+  colors?: "primary" | "secondary" | "success" | "error" | "warning";
+  size?: "sx" | "sm" | "md" | "lg" | "xl";
   label: string;
-  /**
-   * Optional click handler
-   */
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const Button = ({
-  primary = false,
-  size = 'medium',
+  status = false,
+  outline = false,
+  ghost = false,
+  size = "md",
+  rounded = false,
+  loading = false,
+  disabled = false,
   backgroundColor,
+  colors = "primary",
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = status
+    ? outline
+      ? `btn-outline-${colors}`
+      : `btn-${colors}`
+    : "";
+  const _ghost = ghost ? "btn-ghost" : "";
+  const _rounded = rounded ? "btn-rounded" : "";
+  const _loading = loading ? "btn-loading" : "";
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={["btn", `btn-${size}`, mode, _ghost, _rounded, _loading].join(
+        " "
+      )}
       style={{ backgroundColor }}
+      disabled={disabled}
       {...props}
     >
       {label}

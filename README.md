@@ -94,8 +94,9 @@ export default {
   title: 'tailwind/AnotherButton',
   component: AnotherButton,
   argTypes: {
-    htmlFor: { control: "color" },
-    className: { control: "color" },
+    htmlFor: { control: "text" },
+    className: { control: "text" },
+    backgroundColor: { control: "color" },
   },
 } as ComponentMeta<typeof AnotherButton>
 
@@ -119,7 +120,8 @@ TailwindCSS 生成と、Storybook 実行のスクリプト
     "watch:css": "npx tailwindcss -i ./styles/globals.css -o ./public/tailwind.css --watch",
     "watch:storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook dev -p 6006",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
-    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook"
+    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
+    "chromatic": "source .env.local && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
 }
 ```
 
@@ -134,9 +136,14 @@ $ npm run watch:storybook
 
 Chromatic は、UI フィードバック、ビジュアルテスト、およびドキュメントの収集を自動化するため、手作業を減らしてより迅速に反復できます。
 
+- ストーリーブックの公開
+- UI テスト
+- UI レビュー
+- ビジュアル リグレッション テスト
+
 GitHub、GitLab、Bitbucket、または電子メールでサインインし、chromatic プロジェクトを作成後 `<project-token>` を取得
 
-（管理画面から確認する場合は、 Manage -> Configure ）
+（管理画面から確認する場合は、 Manage -> Configure）
 
 Publish S4UI’s Storybook
 

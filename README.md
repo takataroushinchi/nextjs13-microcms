@@ -57,12 +57,19 @@ $ npm run storybook
 tsconfig.json にエラーが表示された場合、vscode を終了し、開いてください。
 `Node.js v18` にアップグレードしたら `storybook` のビルドが通らない問題への対応
 
-`npm script` に `NODE_OPTIONS=--openssl-legacy-provider` を付与してエラーを回避（暫定）
+`npm script` に `NODE_OPTIONS=--openssl-legacy-provider` を付与してエラーを回避（暫定）するか、環境変数に追加
 
 ```
 "scripts": {
   "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006"
 }
+```
+
+or CI 実行もあるので環境変数指定と、gitHub Actions の環境変数指定で対応
+
+```
+$ echo 'export NODE_OPTIONS=--openssl-legacy-provider' >> ~/.zshrc
+$ source ~/.zshrc
 ```
 
 `.storybook/preview.js` を開き、 `tailwindcss` スクリプトで作成されたファイルをインポートします。
@@ -118,10 +125,11 @@ TailwindCSS 生成と、Storybook 実行のスクリプト
 ```
 "scripts": {
     "watch:css": "npx tailwindcss -i ./styles/globals.css -o ./public/tailwind.css --watch",
-    "watch:storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook dev -p 6006",
-    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
-    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "chromatic": "source .env.local && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
+    "watch:storybook": "start-storybook dev -p 6006",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "chromatic:local": "source .env.local && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
 }
 ```
 

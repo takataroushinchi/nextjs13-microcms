@@ -11,7 +11,7 @@
     "watch:storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook dev -p 6006",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "chromatic": "chromatic --exit-zero-on-changes",
+    "chromatic": "chromatic",
     "chromatic:local": "source .env.local && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {

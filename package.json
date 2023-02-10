@@ -10,7 +10,7 @@
     "watch:css": "npx tailwindcss -i ./styles/globals.css -o ./public/tailwind.css --watch",
     "watch:storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook dev -p 6006",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
-    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
+    "build-storybook": "build-storybook",
     "chromatic": "chromatic --exit-zero-on-changes",
     "chromatic:local": "source .env.local && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
@@ -45,7 +45,6 @@
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
-    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.5.16",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",

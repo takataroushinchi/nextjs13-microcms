@@ -14,7 +14,7 @@ import {
 import { Info } from "lucide-react";
 import { useState } from "react";
 
-import { SalesPerson } from "@/app/modules/test-table-view";
+import type { SalesPerson } from "@/app/modules/test-table-view";
 
 export const performance = [
   {

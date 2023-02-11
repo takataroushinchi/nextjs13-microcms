@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "@tremor/react/dist/esm/tremor.css";
 
 import { GlobalNavigation } from "@/app/modules/global-navigation";
 import { ScrollTrigger } from "@/app/modules/scroll-trigger";

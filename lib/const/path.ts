@@ -8,6 +8,7 @@ const PATH = {
   STATIC: "/static/[postid]",
   GENRES: "/genres",
   GENRE: "/genres/[genreid]",
+  DASHBOARD: "/dashboard",
   DYNAMICS: "/dynamic",
   DYNAMIC: "/dynamic/[postid]",
   SUSPENSE: "/suspense",

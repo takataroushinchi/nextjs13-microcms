@@ -24,6 +24,12 @@ Tailwind ベースのコンポーネントクラスライブラリ
 
 Dark Mode アプリケーションのベーススタイル
 
+## tremor
+
+ダッシュボードを構築するための低レベルで独立したコンポーネントブロックを組み合わせて利用する UI コンポーネント ライブラリ
+
+[tremor](https://www.tremor.so/)
+
 ## Icon
 
 Lucide Powered by Vercel

@@ -2,21 +2,22 @@
 
 import ReactPlayer from "react-player";
 
-export const VideoPlayer = () => {
+type Props = { url: string };
+
+export const VideoPlayer = (props: Props) => {
   const putVideoPlayLog = () => {
     console.log("VideoPlayer Log");
   };
+
   return (
     <ReactPlayer
-      url={
-        "https://cdn.search.auone.jp/static/web/permanent/img/amp/story01/cover.mp4"
-      }
-      className="react-player"
+      url={props.url}
+      className="aspect-video w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-md"
       controls={true}
       width="100%"
       height="100%"
       playing={false}
-      onStart={() => putVideoPlayLog()}
+      onStart={putVideoPlayLog}
     />
   );
 };

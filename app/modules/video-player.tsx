@@ -2,9 +2,13 @@
 
 import ReactPlayer from "react-player";
 
-type Props = { url: string };
+export type Video = {
+  id: string;
+  title: string;
+  url: string;
+};
 
-export const VideoPlayer = (props: Props) => {
+export const VideoPlayer = (props: Video) => {
   const putVideoPlayLog = () => {
     console.log("VideoPlayer Log");
   };

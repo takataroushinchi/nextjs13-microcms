@@ -15,6 +15,7 @@
     "chromatic:local": "source .env.local && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
+    "@mux/mux-player-react": "^1.7.1",
     "@next/font": "13.1.1",
     "@radix-ui/react-label": "^2.0.0",
     "@radix-ui/react-select": "^1.2.0",

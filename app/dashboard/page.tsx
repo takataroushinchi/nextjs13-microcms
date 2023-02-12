@@ -1,9 +1,9 @@
-import { TestTremor } from "@/app/modules/test-tremor";
+import { KpiCardGrid } from "@/app/modules/tremor/kpi-card-grid";
 
 export default async function DashboardPage() {
   return (
     <div>
-      <TestTremor />
+      <KpiCardGrid />
     </div>
   );
 }

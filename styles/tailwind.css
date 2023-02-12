@@ -2063,10 +2063,6 @@ html {
   pointer-events: none;
 }
 
-.static {
-  position: static;
-}
-
 .fixed {
   position: fixed;
 }
@@ -2208,12 +2204,12 @@ html {
   height: 3rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .h-\[calc\(100vh-56px\)\] {
   height: calc(100vh - 56px);
+}
+
+.h-96 {
+  height: 24rem;
 }
 
 .min-h-\[calc\(100vh-240px\)\] {
@@ -2256,12 +2252,12 @@ html {
   width: 2.5rem;
 }
 
-.w-14 {
-  width: 3.5rem;
-}
-
 .w-1\/4 {
   width: 25%;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-\[400px\] {

@@ -3,11 +3,11 @@
 import { Block, Tab, TabList, Text, Title } from "@tremor/react";
 import { useState } from "react";
 
-import { TestChartView } from "@/app/modules/test-chart-view";
-import { TestKpiCard } from "@/app/modules/test-kpi-card";
-import { TestTableView } from "@/app/modules/test-table-view";
+import { ChartView } from "@/app/modules/tremor/chart-view";
+import { KpiCard } from "@/app/modules/tremor/kpi-card";
+import { TableView } from "@/app/modules/tremor/table-view";
 
-export const TestTremor = () => {
+export const KpiCardGrid = () => {
   const [selectedView, setSelectedView] = useState(1);
 
   return (
@@ -26,15 +26,15 @@ export const TestTremor = () => {
 
       {selectedView === 1 ? (
         <>
-          <TestKpiCard />
+          <KpiCard />
 
           <Block marginTop="mt-6">
-            <TestChartView />
+            <ChartView />
           </Block>
         </>
       ) : (
         <Block marginTop="mt-6">
-          <TestTableView />
+          <TableView />
         </Block>
       )}
     </main>

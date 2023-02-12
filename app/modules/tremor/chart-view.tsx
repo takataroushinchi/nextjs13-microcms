@@ -14,7 +14,7 @@ import {
 import { Info } from "lucide-react";
 import { useState } from "react";
 
-import type { SalesPerson } from "@/app/modules/test-table-view";
+import type { SalesPerson } from "@/app/modules/tremor/table-view";
 
 export const performance = [
   {
@@ -118,7 +118,7 @@ export const salesPeople: SalesPerson[] = [
   },
 ];
 
-export const TestChartView = () => {
+export const ChartView = () => {
   const [selectedKpi, setSelectedKpi] = useState("Sales");
 
   // map formatters by selectedKpi

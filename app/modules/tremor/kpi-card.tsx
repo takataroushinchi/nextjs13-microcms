@@ -48,7 +48,7 @@ const kpiData: Kpi[] = [
   },
 ];
 
-export const TestKpiCard = () => {
+export const KpiCard = () => {
   return (
     <ColGrid
       numColsMd={2}

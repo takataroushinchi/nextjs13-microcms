@@ -101,7 +101,7 @@ export const salesPeople: SalesPerson[] = [
   },
 ];
 
-export const TestTableView = () => {
+export const TableView = () => {
   const [selectedStatus, setSelectedStatus] = useState("all");
   const [selectedNames, setSelectedNames] = useState<string[]>([]);
 

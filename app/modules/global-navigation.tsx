@@ -3,6 +3,7 @@
 import { getPath } from "lib/const/path";
 import { ActiveLink } from "lib/next";
 import {
+  Fish,
   FolderTree,
   Home,
   LineChart,
@@ -20,6 +21,7 @@ const ITEMS = [
   { href: getPath("GENRES"), label: "ジャンル", Icon: Tags },
   { href: getPath("DASHBOARD"), label: "ダッシュボード", Icon: LineChart },
   { href: getPath("VIDEO"), label: "動画", Icon: Monitor },
+  { href: getPath("MANTINE"), label: "Mantine", Icon: Fish },
 ];
 
 const activeClass =

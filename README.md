@@ -30,6 +30,16 @@ Dark Mode アプリケーションのベーススタイル
 
 [tremor](https://www.tremor.so/)
 
+## Mantine v6-alpha.5
+
+[Mantine_v6.0.0-alpha.5 Document](https://v6.mantine.dev/)
+
+`@mantine/dates` 利用テスト
+
+```
+$ npm install @mantine/core @mantine/hooks @mantine/dates dayjs @mantine/form @mantine/next @emotion/server @emotion/react
+```
+
 ## Icon
 
 Lucide Powered by Vercel

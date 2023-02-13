@@ -15,6 +15,13 @@
     "chromatic:local": "source .env.local && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
+    "@mantine/core": "^5.10.3",
+    "@mantine/dates": "^5.10.3",
+    "@mantine/form": "^5.10.3",
+    "@mantine/hooks": "^5.10.3",
+    "@mantine/next": "^5.10.3",
     "@next/font": "13.1.1",
     "@radix-ui/react-label": "^2.0.0",
     "@radix-ui/react-select": "^1.2.0",

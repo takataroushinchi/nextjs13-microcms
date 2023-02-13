@@ -14,7 +14,7 @@ const videoList = [
   },
 ] satisfies Video[];
 
-export default async function MuxPage() {
+export default async function VideoPage() {
   return (
     <div className="flex items-start justify-center gap-4">
       {videoList.map((video) => {

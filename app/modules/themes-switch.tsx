@@ -9,7 +9,7 @@ export default function ThemesSwitchSt() {
   const dark = colorScheme === "dark";
 
   useEffect(() => {
-    if (dark) {
+    if (colorScheme === "dark") {
       document.documentElement.dataset["theme"] = "dark";
     } else {
       document.documentElement.dataset["theme"] = "light";

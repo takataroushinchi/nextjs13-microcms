@@ -11,12 +11,12 @@ export const CategoryList = async () => {
 
   return (
     <div>
-      <ul className="[&>*]:border-b-1 space-y-1 [&>*]:border-gray-900/50 [&>li>*]:block [&>li>*]:space-y-3 [&>li>*]:bg-gray-900 [&>li>*]:p-6 [&>li>*]:text-black [&>li>*]:shadow [&>li>*]:ring-1 [&>li>*]:ring-slate-900/5">
+      <ul className="[&>*]:border-b-1 space-y-1 [&>*]:border-gray-200/50 [&>li>*]:block [&>li>*]:space-y-3 [&>li>*]:bg-gray-200 [&>li>*]:p-6 [&>li>*]:text-black [&>li>*]:shadow dark:[&>li>*]:bg-gray-400">
         <li>
           <Link
             href={`${getPath("POST")}`}
             passHref
-            className="hover:bg-sky-700 hover:ring-sky-500 dark:text-white"
+            className="hover:bg-sky-700 dark:text-white dark:hover:bg-sky-900"
           >
             ALL
           </Link>
@@ -27,7 +27,7 @@ export const CategoryList = async () => {
               <Link
                 href={`${getPath("CATEGORY", category.id)}`}
                 passHref
-                className="hover:bg-sky-700 hover:ring-sky-500 dark:text-white"
+                className="hover:bg-sky-700 dark:text-white dark:hover:bg-sky-900"
               >
                 {category.name}
               </Link>

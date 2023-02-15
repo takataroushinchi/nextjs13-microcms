@@ -44,6 +44,7 @@ export default function MantineEmotionProvider({
   //         : "light";
   //     setColorScheme(preferredColorMode);
   //   }
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, []);
 
   useHotkeys([["mod+J", () => toggleColorScheme()]]);

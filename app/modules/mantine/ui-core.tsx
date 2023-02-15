@@ -37,7 +37,7 @@ export const UiCore = ({ id }: { id?: string }) => {
 
   return (
     <Box className="space-x-8 p-8">
-      <Box>
+      <Box className="pb-8">
         <Button onClick={generateId}>Generate New ID - id - {state}</Button>
       </Box>
       <Flex gap="md">

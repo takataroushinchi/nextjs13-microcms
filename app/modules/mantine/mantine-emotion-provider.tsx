@@ -7,6 +7,7 @@ import {
   createEmotionCache,
   MantineProvider,
 } from "@mantine/core";
+import { useHotkeys } from "@mantine/hooks";
 import { useServerInsertedHTML } from "next/navigation";
 import { useState } from "react";
 
@@ -27,14 +28,25 @@ export default function MantineEmotionProvider({
     />
   ));
 
-  // const mode =
-  //   window.matchMedia("(prefers-color-scheme: dark)").matches == true
-  //     ? "dark"
-  //     : "light";
+  // hook will return either 'dark' or 'light' on client
+  // and always 'light' during ssr as window.matchMedia is not available
+  // const preferredColorScheme = useColorScheme();
 
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const preferredColorMode =
+  //       window.matchMedia("(prefers-color-scheme: dark)").matches == true
+  //         ? "dark"
+  //         : "light";
+  //     setColorScheme(preferredColorMode);
+  //   }
+  // }, []);
+
+  useHotkeys([["mod+J", () => toggleColorScheme()]]);
 
   return (
     <CacheProvider value={cache}>

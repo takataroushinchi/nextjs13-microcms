@@ -7,7 +7,8 @@ import { useState } from "react";
 
 export const Calender = () => {
   const [selected, setSelected] = useState<Date[]>([]);
-  const [value, setValue] = useState<Date | null>(null);
+  // const [value, setValue] = useState<Date | null>(null);
+  const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
 
   const handleSelect = (date: Date) => {
     const isSelected = selected.some((s) => dayjs(date).isSame(s, "date"));

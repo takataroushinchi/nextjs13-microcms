@@ -2204,12 +2204,12 @@ html {
   height: 1.25rem;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
 .h-\[calc\(100vh-56px\)\] {
   height: calc(100vh - 56px);
+}
+
+.h-12 {
+  height: 3rem;
 }
 
 .h-96 {
@@ -2244,6 +2244,10 @@ html {
   width: 1.25rem;
 }
 
+.w-1\/4 {
+  width: 25%;
+}
+
 .w-\[180px\] {
   width: 180px;
 }
@@ -2254,10 +2258,6 @@ html {
 
 .w-10 {
   width: 2.5rem;
-}
-
-.w-1\/4 {
-  width: 25%;
 }
 
 .w-14 {
@@ -2298,6 +2298,10 @@ html {
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @keyframes spin {
@@ -2404,6 +2408,12 @@ html {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-0\.5 > :not([hidden]) ~ :not([hidden]) {
@@ -2571,12 +2581,12 @@ html {
   padding: 0.5rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .p-4 {
   padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .py-2 {
@@ -2599,14 +2609,14 @@ html {
   padding-bottom: 0.25rem;
 }
 
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .pr-2 {
@@ -2621,16 +2631,16 @@ html {
   padding-left: 0.5rem;
 }
 
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
 
 .pr-1 {
   padding-right: 0.25rem;
-}
-
-.pt-1 {
-  padding-top: 0.25rem;
 }
 
 .pb-2 {
@@ -3103,7 +3113,7 @@ html {
   background-color: rgb(var(--slate-900) / var(--tw-bg-opacity));
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .sm\:mt-6 {
     margin-top: 1.5rem;
   }
@@ -3137,7 +3147,7 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -3151,7 +3161,7 @@ html {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .lg\:prose-sm {
     font-size: 0.875rem;
     line-height: 1.7142857;

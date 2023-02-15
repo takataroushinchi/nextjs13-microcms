@@ -1,9 +1,14 @@
 "use client";
 
 import { CacheProvider } from "@emotion/react";
-import { createEmotionCache, MantineProvider } from "@mantine/core";
+import {
+  ColorScheme,
+  ColorSchemeProvider,
+  createEmotionCache,
+  MantineProvider,
+} from "@mantine/core";
 import { useServerInsertedHTML } from "next/navigation";
-import React from "react";
+import { useState } from "react";
 
 const cache = createEmotionCache({ key: "my" });
 cache.compat = true;
@@ -22,9 +27,38 @@ export default function MantineEmotionProvider({
     />
   ));
 
+  // const mode =
+  //   window.matchMedia("(prefers-color-scheme: dark)").matches == true
+  //     ? "dark"
+  //     : "light";
+
+  const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+
   return (
     <CacheProvider value={cache}>
-      <MantineProvider emotionCache={cache}>{children}</MantineProvider>
+      <ColorSchemeProvider
+        colorScheme={colorScheme}
+        toggleColorScheme={toggleColorScheme}
+      >
+        <MantineProvider
+          theme={{
+            fontFamily: "Open Sans",
+            colorScheme,
+            activeStyles: {
+              transform: "translateY(0px)",
+              backgroundImage:
+                "linear-gradient(45deg, #3b5bdb 0%, #0c8599 100%)",
+              backgroundColor: "transparent",
+              color: "#fff",
+            },
+          }}
+          emotionCache={cache}
+        >
+          {children}
+        </MantineProvider>
+      </ColorSchemeProvider>
     </CacheProvider>
   );
 }

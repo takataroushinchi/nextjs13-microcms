@@ -33,6 +33,10 @@ export default function MantineEmotionProvider({
   // const preferredColorScheme = useColorScheme();
 
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
+  // const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+  //   key: "color-scheme",
+  //   defaultValue: "dark",
+  // });
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 

@@ -30,9 +30,13 @@ Dark Mode アプリケーションのベーススタイル
 
 [tremor](https://www.tremor.so/)
 
-## Mantine v6-alpha.5
+## Mantine v6
 
-[Mantine_v6.0.0-alpha.5 Document](https://v6.mantine.dev/)
+[Version 6.0.0](https://mantine.dev/changelog/6-0-0/)
+
+- Breaking changes
+  - Migration to rem/em units
+  - @mantine/dates
 
 `@mantine/dates` 利用テスト
 
